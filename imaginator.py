@@ -27,10 +27,10 @@ class Imaginator(Frame):
 
             with tempfile.TemporaryDirectory() as tempdir:
                 with open(source) as stream:
-                    reader = csv.reader(stream)
+                    reader = csv.reader(stream, delimiter=';')
 
                     for ID, *images in reader:
-                        for i, url in enumerate(images):
+                        for i, url in enumerate(images, start=1):
                             if url:
                                 name = f'{ID}_{i}.png'
                                 download(url, tempdir, name)

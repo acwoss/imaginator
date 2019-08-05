@@ -1,2 +1,7 @@
 .idea
 .venv
+.directory
+__pycache__/
+build/
+dist/
+main.spec
